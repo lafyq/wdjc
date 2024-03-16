@@ -1,0 +1,97 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: '0.0.0.0:9090'
+secret: ''
+dns:
+  enable: false
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - 'https://dns.alidns.com/dns-query'
+    - 'https://doh.pub/dns-query'
+  fallback:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+
+proxies:
+  -
+    name: 香港01-IEPL-倍率1.0
+    type: ssr
+    server: cdn.hk1.ec.sx.cn
+    port: 2011
+    cipher: chacha20-ietf
+    password: hzBuV5oT9t6GEx08
+    protocol: auth_aes128_md5
+    protocol-param: '29931:IZDD3rtnP0MQmfmA'
+    obfs: http_simple
+    obfs-param: 51aea29931.microsoft.com
+    udp: true
+  -
+    name: 香港02-IEPL-倍率1.0
+    type: ssr
+    server: cdn.hk2.ec.sx.cn
+    port: 2012
+    cipher: chacha20-ietf
+    password: hzBuV5oT9t6GEx08
+    protocol: auth_aes128_md5
+    protocol-param: '29931:IZDD3rtnP0MQmfmA'
+    obfs: http_simple
+    obfs-param: 51aea29931.microsoft.com
+    udp: true
+  -
+    name: 新加坡01-IEPL-倍率1.0
+    type: ssr
+    server: cdn.sg1.ec.sx.cn
+    port: 2031
+    cipher: chacha20-ietf
+    password: hzBuV5oT9t6GEx08
+    protocol: auth_aes128_md5
+    protocol-param: '29931:IZDD3rtnP0MQmfmA'
+    obfs: http_simple
+    obfs-param: 51aea29931.microsoft.com
+    udp: true
+  -
+    name: 马来西亚01-IEPL-倍率1.0
+    type: ssr
+    server: cdn.my1.ec.sx.cn
+    port: 2097
+    cipher: chacha20-ietf
+    password: hzBuV5oT9t6GEx08
+    protocol: auth_aes128_md5
+    protocol-param: '29931:IZDD3rtnP0MQmfmA'
+    obfs: http_simple
+    obfs-param: 51aea29931.microsoft.com
+    udp: true
+  -
+    name: 印尼01-IEPL-倍率1.0
+    type: ssr
+    server: cdn.id1.ec.sx.cn
+    port: 2101
+    cipher: chacha20-ietf
+    password: hzBuV5oT9t6GEx08
+    protocol: auth_aes128_md5
+    protocol-param: '29931:IZDD3rtnP0MQmfmA'
+    obfs: http_simple
+    obfs-param: 51aea29931.microsoft.com
+    udp: true
+
+
+proxy-groups:
+
+rules:
+
